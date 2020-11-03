@@ -22,10 +22,43 @@ def bogoSort(items):
     return items
 
 
+
+def bubbleSort(CopyCat):
+    CopyCat = CopyCat.copy()
+    PlaceHolder = 0
+
+    for x in range(len(CopyCat)):
+        for y in range(len(CopyCat)-1):
+            if CopyCat[y] > CopyCat[y+1]:
+                Placeholder = CopyCat[y+1]
+                CopyCat[y+1] = CopyCat[y]
+                CopyCat[y] = PlaceHolder
+
+    return CopyCat
+
+
+def InsertionSort(CopyCat):
+    Min = 0
+    PlaceHolder = 0
+    CopyCat = CopyCat.copy()
+
+    for x in range(len(CopyCat)):
+        Min = x
+        for y in range(x, len(CopyCat), 1):
+            if CopyCat[Min]>CopyCat[y]:
+                Min = y
+            PlaceHolder = CopyCat[x]
+            CopyCat[x] = CopyCat[Min]
+            CopyCat[Min] = PlaceHolder
+
+    return CopyCat
+
+
+
 if __name__ == '__main__':
     for i in range(10):
         listen = list(range(1, 8))
-        sorteret = bogoSort(listen)
+        sorteret = InsertionSort(listen)
         random.shuffle(listen)
         print('Shuffled:\t', listen)
         print('Sorted:\t\t', sorteret)

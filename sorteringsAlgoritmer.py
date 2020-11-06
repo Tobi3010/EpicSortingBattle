@@ -37,7 +37,7 @@ def bubbleSort(CopyCat):
     return CopyCat
 
 
-def InsertionSort(CopyCat):
+def SelectionSort(CopyCat):
     Min = 0
     PlaceHolder = 0
     CopyCat = CopyCat.copy()
@@ -50,6 +50,22 @@ def InsertionSort(CopyCat):
             PlaceHolder = CopyCat[x]
             CopyCat[x] = CopyCat[Min]
             CopyCat[Min] = PlaceHolder
+
+
+    return CopyCat
+
+
+def InsertionSort(CopyCat):
+    PlaceHolder = 0
+    CopyCat = CopyCat.copy()
+
+    for x in range(len(CopyCat)):
+        for y in range(0, x+1,1):
+            if CopyCat[y] > CopyCat[x]:
+                PlaceHolder = CopyCat[y]
+                CopyCat[y] = CopyCat[x]
+                CopyCat[x] = PlaceHolder
+            print("Replaced {} with {}".format(CopyCat[y],CopyCat[x]))
 
     return CopyCat
 
